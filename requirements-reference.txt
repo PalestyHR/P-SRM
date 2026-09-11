@@ -1,0 +1,5 @@
+numpy==2.2.6
+scikit-learn==1.7.2
+libauc==1.4.0
+# Remaining dependencies: install through pyproject.toml.
+# Install the matching PyTorch/torchvision wheels for your platform separately.

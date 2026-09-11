@@ -1,0 +1,7 @@
+Annotate PHYSICAL VISIBILITY, not visual similarity and not identity recognition.
+Image 1 illustrates the type of target region being tracked (for example a face/head, person, vehicle or toy). Image 2 is the annotated target region in another video frame. The video annotations already establish which object is being tracked; do not try to verify a person's identity or match their appearance.
+Inspect image 2. Is any part of the target region physically visible? Pose, viewpoint, expression, illumination, scale and background changes do NOT mean absent. A turned or partially covered head is still visible; a partly covered person or vehicle is still visible.
+Output 1 if image 2 visibly contains the target region or any part of it, even when its appearance differs from image 1.
+Output 0 ONLY when the target region is completely hidden behind an occluder or is entirely outside the view, so no target part can be seen.
+Output -1 if the pixels do not let you decide, including when another similar object may fully cover the target. The crop alone does not prove visibility.
+Return ONLY the integer 1, 0, or -1.

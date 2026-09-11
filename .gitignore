@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+data/
+outputs/
+.aris/
+runs/
+third_party/
+native_models/
+build/
+dist/
+*.log

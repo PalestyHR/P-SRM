@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(kcf_check LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(OpenCV 4.10 REQUIRED COMPONENTS core imgproc imgcodecs video tracking)
+add_executable(kcf_check kcf_check.cpp)
+target_link_libraries(kcf_check PRIVATE ${OpenCV_LIBS})
+target_include_directories(kcf_check PRIVATE ${OpenCV_INCLUDE_DIRS})

@@ -1,0 +1,45 @@
+{
+  "host": "tracknetv3_shuttlecock",
+  "task": "tracknet",
+  "sampler": "official",
+  "seeds": [
+    42,
+    3407,
+    8008
+  ],
+  "train_split": "splits/tracknetv3_shuttlecock_train.csv",
+  "model_bundle": "weights/tracknetv3_shuttlecock",
+  "architecture": {
+    "conv_channels": 64,
+    "hidden_width": 256,
+    "activation": "relu",
+    "dropout": 0,
+    "aux_mode": "presence"
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 256,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "warmup_fraction": 0.05,
+    "presence_weight": 0.5
+  },
+  "partial_auc": {
+    "method": "LibAUC one-way KL",
+    "epochs": 1,
+    "learning_rate": 3e-06,
+    "weight_decay": 0.0002,
+    "sampling_rate": 0.5,
+    "margin": 0.6,
+    "gamma": 0.1,
+    "Lambda": 1.0,
+    "head_policy": "preserve"
+  },
+  "readout": {
+    "history_dimensions": 21,
+    "C": 0.1,
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "variant": "Q+H+M"
+  }
+}

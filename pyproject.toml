@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psrm"
+version = "0.2.0"
+description = "Post-Rejection Selective Recovery for visual tracking"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "torch>=2.6", "pandas>=2.0", "scikit-learn>=1.3"]
+
+[project.optional-dependencies]
+train = ["libauc==1.4.0", "torchvision"]
+test = ["pytest>=8"]
+data = ["opencv-python>=4.10", "Pillow"]
+points = ["jax", "jaxlib", "dm-haiku", "optax", "chex", "mediapy", "einops"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

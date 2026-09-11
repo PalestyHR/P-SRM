@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.pt binary
+*.npz binary
+# Blank context markers are part of unified-diff syntax.
+*.patch whitespace=-blank-at-eol

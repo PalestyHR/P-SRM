@@ -1,0 +1,39 @@
+--- a/modules/tracking/include/opencv2/tracking.hpp
++++ b/modules/tracking/include/opencv2/tracking.hpp
+@@ -12,6 +12,11 @@
+ #ifndef CV_DOXYGEN
+ inline namespace tracking {
+ #endif
++
++// Local observation interface. The callback only reads same-update evidence.
++typedef void (*KCFObservationCallback)(const Mat&, const Rect2d&, bool,
++                                      const Point&, double, float, const Size&);
++CV_EXPORTS void setKCFObservationCallback(KCFObservationCallback callback);
+ 
+ /** @defgroup tracking Tracking API
+ @{
+--- a/modules/tracking/src/trackerKCF.cpp
++++ b/modules/tracking/src/trackerKCF.cpp
+@@ -47,6 +47,12 @@
+ 
+ namespace cv {
+ inline namespace tracking {
++namespace {
++  thread_local KCFObservationCallback observationCallback = NULL;
++}
++void setKCFObservationCallback(KCFObservationCallback callback) {
++  observationCallback = callback;
++}
+ namespace impl {
+ 
+ /*---------------------------
+@@ -351,6 +357,9 @@
+ 
+       // extract the maximum response
+       minMaxLoc( response, &minVal, &maxVal, &minLoc, &maxLoc );
++      if (observationCallback)
++          observationCallback(response, roi, resizeImage, maxLoc,
++                              maxVal, params.detect_thresh, image.size());
+       if (maxVal < params.detect_thresh)
+       {
+           return false;
