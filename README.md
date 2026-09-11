@@ -8,17 +8,23 @@ A tracker can reject a prediction even when its candidate is already correctly l
 
 P-SRM keeps candidate coordinates and all native acceptances unchanged. Recovered predictions do not update the host tracker's state or the trusted history. Ground truth is used only for training, calibration and evaluation.
 
-```mermaid
-flowchart LR
-    A[Native tracker] --> B{Native acceptance}
-    B -->|Accepted| F[Final output]
-    B -->|Rejected| C[Spatial quality Q]
-    H[Causal native history H] --> D[Quality and history readout]
-    C --> D
-    M[Native margin M] --> E[Calibrated recovery]
-    D --> E
-    E -->|Readmitted, same coordinates| F
-```
+[![P-SRM overview: evidence adaptation, candidate-quality learning, causal history fusion and selective recovery](assets/overview.png)](assets/overview.svg)
+
+The evidence adapter organizes spatial evidence and candidate geometry for the quality network. Its output is fused with past native-accepted states and the native margin to decide recovery. Dashed arrows show training-only paths. [Open the vector figure](assets/overview.svg).
+
+## Examples
+
+Selected qualitative examples from the manuscript. In each pair, **left: Native**, **right: +P-SRM**. Gray dashed markers indicate rejected candidates; blue markers show those same candidates after recovery, at unchanged coordinates.
+
+[![Twelve paired recovery examples across category-specific, point and generic object tracking](assets/recovery_examples.png)](assets/recovery_examples.png)
+
+| Row | Tracker | Examples and data source |
+| --- | --- | --- |
+| Top: category-specific tracking | TrackNetV3 | Badminton, table tennis and tennis from RacketVision training; badminton from Shuttlecock Test |
+| Middle: point tracking | TAP-Net | Laying bricks, sipping a cup, sanding wood and pirouetting from Kinetics development |
+| Bottom: generic object tracking | KCF | Basketball, Doll, Boy and Suv from OTB2013 out-of-fold records |
+
+These selected illustrations show the recovery mechanism; their mixed source settings are identified above. They do not represent an additional evaluation set.
 
 ## Installation
 
@@ -124,4 +130,4 @@ Paper bibliographic details will be added when publication metadata is confirmed
 
 P-SRM builds on the released trackers and datasets listed in [THIRD_PARTY.md](THIRD_PARTY.md), and uses LibAUC for the one-way partial-AUC training objective. Original trackers, datasets and checkpoints retain their own terms.
 
-This repository is a private review copy. The public license has not yet been assigned; see [LICENSE](LICENSE). No third-party native model weights or original dataset media are redistributed here.
+This repository is a private review copy. The public license has not yet been assigned; see [LICENSE](LICENSE). Third-party native model weights and full datasets are not bundled. The Overview and Examples figures include selected annotated frames for illustration.
