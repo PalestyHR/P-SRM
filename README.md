@@ -85,7 +85,8 @@ Evidence, metadata, history and margins contain **rejected candidates only**, in
 
 TrackNet uses the official Test partition for Shuttlecock and Validation for RacketVision. KCF is an OOF experiment, not an independent-test result. The bundled models use seed 42; the training configurations also specify the paper's repeated seeds where applicable.
 
-It should be noted that OTB2013 does not provide native labelling that meets the requirements of P-SRM tasks, therefore, we propose a fixed OTB2013 Datasets.
+OTB2013 provides bounding-box annotations but lacks the explicit per-frame visibility labels required by our P-SRM training and evaluation protocol. We therefore provide an OTB2013 visibility supplement, containing reusable visibility labels and the annotation prompt, without redistributing the original images.
+
 The reusable [OTB2013 visibility supplement](annotations/otb2013/README.md) contains labels and the annotation prompt, without images.
 
 ## Reproduce Results
