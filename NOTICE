@@ -1,0 +1,15 @@
+P-SRM
+Copyright 2026 P-SRM contributors
+
+The original P-SRM source code, documentation, configurations and P-SRM-trained
+weights under weights/ are licensed under the Apache License, Version 2.0.
+This grant covers only rights the P-SRM contributors are entitled to license.
+
+Third-party code, architecture descriptions, native trackers, native weights,
+dataset media and the third-party content depicted in example figures retain
+their respective rights and license terms. This notice does not relicense them.
+See THIRD_PARTY.md and adapters/licenses/ for source and license notices.
+
+The supplementary annotations under annotations/otb2013/ are outside this
+software-and-model license grant. Their separate data license has not yet
+been assigned. The original OTB dataset is not licensed by this project.

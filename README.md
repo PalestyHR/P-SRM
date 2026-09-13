@@ -132,4 +132,4 @@ Paper bibliographic details will be added when publication metadata is confirmed
 
 P-SRM builds on the released trackers and datasets listed in [THIRD_PARTY.md](THIRD_PARTY.md), and uses LibAUC for the one-way partial-AUC training objective. Original trackers, datasets and checkpoints retain their own terms.
 
-This repository is a private review copy. The public license has not yet been assigned; see [LICENSE](LICENSE). Third-party native model weights and full datasets are not bundled. The Overview and Examples figures include selected annotated frames for illustration.
+The original P-SRM code, documentation, configurations and P-SRM-trained weights are licensed under [Apache-2.0](LICENSE). See [NOTICE](NOTICE) for the scope and [THIRD_PARTY.md](THIRD_PARTY.md) for third-party terms. The OTB2013 supplement has separate data-license status described in its [README](annotations/otb2013/README.md). Third-party native model weights and full datasets are not bundled. The Overview and Examples figures include selected annotated frames for illustration.

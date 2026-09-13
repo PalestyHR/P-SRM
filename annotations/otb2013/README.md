@@ -20,3 +20,7 @@ Image 1 is the first-frame target reference crop. Image 2 is the current frame's
 Generation used greedy decoding, a maximum of 8 output tokens, batch size 32, BF16, and the model's SDPA attention implementation. The actual prompt is provided verbatim in prompt.txt.
 
 These labels are supervision/evaluation data, not runtime input to the P-SRM recovery module.
+
+## License status
+
+The repository's Apache-2.0 software-and-model license does not cover this supplementary annotation set. A separate data license has not yet been assigned. Original OTB images and bounding-box annotations retain their original terms.

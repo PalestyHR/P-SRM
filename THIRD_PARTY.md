@@ -13,4 +13,4 @@
 
 The TrackNetV1/V2 PyTorch graph interpreters execute user-supplied original parameters; they are not newly trained native models. The supplied V1 architecture description is derived from the released original graph. Preserve the native authors' applicable terms when using these components.
 
-The Overview and Examples figures contain selected annotated frames from the manuscript for illustration. No native checkpoint, full dataset, raw video, or complete third-party source tree is redistributed. Obtain the original datasets and models from their sources. The P-SRM code and model package is currently a private review copy, with public licensing to be assigned by the authors.
+The Overview and Examples figures contain selected annotated frames from the manuscript for illustration. No native checkpoint, full dataset, raw video, or complete third-party source tree is redistributed. Obtain the original datasets and models from their sources. The original P-SRM code and P-SRM-trained weights use Apache-2.0; this does not supersede any third-party terms. See [NOTICE](NOTICE) for the scope. The OTB2013 supplementary annotations have a separate data-license status.
