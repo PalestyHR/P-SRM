@@ -115,6 +115,10 @@ Run the package checks:
 python -m pytest -q
 ```
 
+## FAQ
+
+See the [Frequently Asked Questions](docs/faq.md) for implementation details, calibration and evaluation protocols, ablation interpretation, runtime measurement and annotation sources.
+
 ## Citation
 
 Paper bibliographic details will be added when publication metadata is confirmed. For this code repository:
