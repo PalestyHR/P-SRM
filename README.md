@@ -121,14 +121,17 @@ See the [Frequently Asked Questions](docs/faq.md) for implementation details, ca
 
 ## Citation
 
-Paper bibliographic details will be added when publication metadata is confirmed. For this code repository:
+If you use P-SRM in your research, please cite our [paper](https://arxiv.org/abs/2609.39832):
 
 ```bibtex
-@misc{psrm_code,
-  title = {{P-SRM}: Visual Tracking with Post-Rejection Selective Recovery},
-  author = {{P-SRM contributors}},
+@misc{he2026psrm,
+  title = {{P-SRM}: Selective Recovery of Rejected Predictions in Visual Tracking},
+  author = {Youbin He and Siwei Wang},
   year = {2026},
-  howpublished = {\url{https://github.com/PalestyHR/P-SRM}}
+  eprint = {2609.39832},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV},
+  url = {https://arxiv.org/abs/2609.39832}
 }
 ```
 
